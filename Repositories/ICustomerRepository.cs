@@ -12,9 +12,7 @@ public interface ICustomerRepository
     Task<IEnumerable<Customer>> GetCustomersWithAddressesAsync();
     Task<Customer?> GetCustomerByIdAsync(int customerId);
     Task<Customer?> GetCustomerWithAddressesByIdAsync(int customerId);
-    void UpdateCustomer(Customer customer);
-    void RemoveCustomer(Customer customer);
-    
+    void RemoveCustomer(Customer customer);    
 ////////////////////////////////////////////////////////////////////////////
 // Address
 //////////////////////////////////////////////////////////////////////////// 

@@ -87,13 +87,13 @@ builder.Services.AddScoped<IValidator<UpdateCustomerWithAddressesCommand>, Updat
 builder.Services.AddDbContext<CustomerContext>(options => 
 {
     options
-    .UseNpgsql("Host=localhost;Database=Univali;Username=postgres;Password=123");
+    .UseNpgsql("Host=localhost;Database=Univali;Username=postgres;Password=123456");
 });
 
 builder.Services.AddDbContext<PublisherContext>(options => 
 {
     options
-    .UseNpgsql("Host=localhost;Database=Univali;Username=postgres;Password=123");
+    .UseNpgsql("Host=localhost;Database=Univali;Username=postgres;Password=123456");
 });
 
 builder.Services.AddControllers(options =>{

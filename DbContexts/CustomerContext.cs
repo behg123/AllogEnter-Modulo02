@@ -13,6 +13,18 @@ public class CustomerContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+
+        var customer = modelBuilder.Entity<Customer>(); 
+
+        customer.Property(c => c.Name)
+            .HasMaxLength(80)
+            .IsRequired();
+
+        customer.Property(c => c.Cpf)
+            .HasMaxLength(11)
+            .IsFixedLength();
+
+
         modelBuilder.Entity<Customer>()
             .HasData(
                 new Customer()
@@ -53,6 +65,12 @@ public class CustomerContext : DbContext
                         CustomerId = 2
                     }
             );
+
+        var address = modelBuilder.Entity<Address>();  
+
+        address.Property(a => a.Street).HasMaxLength(50).IsRequired();
+
+        address.Property(a => a.City).HasMaxLength(50).IsFixedLength();
 
         base.OnModelCreating(modelBuilder);
     }

@@ -3,6 +3,8 @@ using Univali.Api.Entities;
 
 namespace Univali.Api.DbContexts;
 
+// function migrateDB($migrationName){dotnet ef migrations add $migrationName --context PublisherContext}
+// function updateDB($contextName){dotnet ef database update --context $contextName}
 public class PublisherContext : DbContext
 {
 
@@ -20,6 +22,10 @@ public class PublisherContext : DbContext
         publisher.HasMany(a => a.Courses)
         .WithOne(c => c.Publisher)
         .HasForeignKey(c => c.PublisherId);
+
+        publisher.Property(c => c.Name).HasMaxLength(80).IsRequired();
+
+        publisher.Property(c => c.CNPJ).HasMaxLength(14).IsFixedLength();
 
         publisher.HasData(
             new Publisher
@@ -114,6 +120,7 @@ public class PublisherContext : DbContext
                 Title = "ASP.NET Core Web Api",
                 Price = 97.00m,
                 Description = "In this course, you'll learn how to build an API with ASP.NET Core that connects to a database via Entity Framework Core from scratch.",
+                Category = "Backend",
                 PublisherId = 1
             },
             new Course
@@ -122,6 +129,7 @@ public class PublisherContext : DbContext
                 Title = "Entity Framework Fundamentals",
                 Price = 197.00m,
                 Description = "In this course, Entity Framework Core 6 Fundamentals, you’ll learn to work with data in your .NET applications.",
+                Category = "Backend",
                 PublisherId = 1
             },
             new Course
@@ -130,6 +138,7 @@ public class PublisherContext : DbContext
                 Title = "Getting Started with Linux",
                 Price = 47.00m,
                 Description = "You've heard that Linux is the future of enterprise computing and you're looking for a way in.",
+                Category = "Operating Systems",
                 PublisherId = 2
             }
         );

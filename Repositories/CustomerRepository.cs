@@ -19,10 +19,15 @@ public class CustomerRepository : ICustomerRepository
 ////////////////////////////////////////////////////////////////////////////
 // Customer
 ////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////
+    // Create
     public void AddCustomer(Customer customer)
     {
         _context.Customers.Add(customer);
     }
+
+    ///////////////////////////
+    // Read
     public async Task<Customer?> GetCustomerByIdAsync(int customerId)
     {
         return await _context.Customers.FirstOrDefaultAsync(c => c.Id == customerId);
@@ -39,14 +44,16 @@ public class CustomerRepository : ICustomerRepository
     {
         return await _context.Customers.Include(c => c.Addresses).OrderBy(c => c.Id).ToListAsync();
     }
-    public void UpdateCustomer(Customer customer)
-    {
-        _context.Customers.Update(customer);
-    }
+
+    ///////////////////////////
+    // Delete
     public void RemoveCustomer(Customer customer)
     {
         _context.Customers.Remove(customer);
     }
+
+    ///////////////////////////
+    // Utils
     public async Task<bool> CustomerExistsAsync(int customerId)
     {
         return await _context.Customers
@@ -54,28 +61,35 @@ public class CustomerRepository : ICustomerRepository
     }
 
 
-
 ////////////////////////////////////////////////////////////////////////////
 // Address
 ////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////
+    // Create
+    public void AddAddress(Address address)
+    {
+        _context.Addresses.Add(address);
+    }
+
+    ///////////////////////////
+    // Read
     public async Task<IEnumerable<Address>> GetAddressesAsync(int customerId)
     {
         return await _context
             .Addresses.OrderBy(a => a.Id).Where(a => a.CustomerId == customerId).ToListAsync();
     }
+
     public async Task<Address?> GetAddressByIdAsync(int customerId, int addressId)
     {
         return await _context.Addresses.FirstOrDefaultAsync(a => a.CustomerId == customerId && a.Id == addressId);
     }
-    public void AddAddress(Address address)
-    {
-        _context.Addresses.Add(address);
-    }
+
+    ///////////////////////////
+    // Remove
     public void RemoveAddress(Address address)
     {
         _context.Addresses.Remove(address);
     }
-
 
 
 ////////////////////////////////////////////////////////////////////////////

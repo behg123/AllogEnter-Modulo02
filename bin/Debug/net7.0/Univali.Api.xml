@@ -40,6 +40,30 @@
         <member name="M:Univali.Api.Migrations.Publisher.EditiEntities.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:Univali.Api.Migrations.Publisher.AddFilter">
+            <inheritdoc />
+        </member>
+        <member name="M:Univali.Api.Migrations.Publisher.AddFilter.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Univali.Api.Migrations.Publisher.AddFilter.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Univali.Api.Migrations.Publisher.AddFilter.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Univali.Api.Migrations.Publisher.newFilter">
+            <inheritdoc />
+        </member>
+        <member name="M:Univali.Api.Migrations.Publisher.newFilter.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Univali.Api.Migrations.Publisher.newFilter.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Univali.Api.Migrations.Publisher.newFilter.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
         <member name="T:Univali.Api.Models.AddressForCreationDto">
             <summary>
             An Address with Street and City

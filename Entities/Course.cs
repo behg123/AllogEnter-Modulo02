@@ -7,6 +7,8 @@ public class Course
     public string Description {get; set;} = string.Empty;
     public decimal Price {get; set;}
     public List<Author> Authors {get; set;} = new();
-   public Publisher? Publisher {get; set;}
-   public int PublisherId {get; set;}
+    public Publisher? Publisher {get; set;}
+    public int PublisherId {get; set;}
+    public string Category { get; set; } = string.Empty;
+
 }
