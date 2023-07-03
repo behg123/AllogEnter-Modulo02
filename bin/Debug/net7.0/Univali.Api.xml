@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Univali.Api</name>
+    </assembly>
+    <members>
+        <member name="T:Univali.Api.Migrations.Customer.AddCustomerContext">
+            <inheritdoc />
+        </member>
+        <member name="M:Univali.Api.Migrations.Customer.AddCustomerContext.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Univali.Api.Migrations.Customer.AddCustomerContext.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Univali.Api.Migrations.Customer.AddCustomerContext.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Univali.Api.Migrations.Publisher.AddPublisherContext">
+            <inheritdoc />
+        </member>
+        <member name="M:Univali.Api.Migrations.Publisher.AddPublisherContext.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Univali.Api.Migrations.Publisher.AddPublisherContext.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Univali.Api.Migrations.Publisher.AddPublisherContext.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Univali.Api.Migrations.Publisher.EditiEntities">
+            <inheritdoc />
+        </member>
+        <member name="M:Univali.Api.Migrations.Publisher.EditiEntities.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Univali.Api.Migrations.Publisher.EditiEntities.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Univali.Api.Migrations.Publisher.EditiEntities.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Univali.Api.Models.AddressForCreationDto">
+            <summary>
+            An Address with Street and City
+            </summary>
+        </member>
+        <member name="P:Univali.Api.Models.AddressForManipulationDto.Street">
+            <summary>
+            The name street
+            </summary>
+        </member>
+        <member name="P:Univali.Api.Models.AddressForManipulationDto.City">
+            <summary>
+            The name city
+            </summary>
+        </member>
+    </members>
+</doc>
