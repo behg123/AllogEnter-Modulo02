@@ -7,31 +7,56 @@ public interface IPublisherRepository
 ////////////////////////////////////////////////////////////////////////////
 // Publisher
 ////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////
+    // Create
     void AddPublisher(Publisher publisher);
+
+    ///////////////////////////
+    // Read
     Task<IEnumerable<Publisher>> GetPublishersAsync();
     Task<Publisher?> GetPublisherByIdAsync(int publisherId);
-    public Task<Publisher?> GetPublisherWithCoursesByIdAsync(int publisherId);
+    Task<Publisher?> GetPublisherWithCoursesByIdAsync(int publisherId);
+
+    ///////////////////////////
+    // Remove
     void RemovePublisher(int publisherId);
+
+    ///////////////////////////
+    // Utils
     Task<bool> PublisherExistsAsync(int publisherId);
 
 ////////////////////////////////////////////////////////////////////////////
 // Course
 ////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////
+    // Create
     Task<bool> AddCourseAsync(int publisherId, Course course);
+
+    ///////////////////////////
+    // Read
     Task<Course?> GetCourseByIdAsync(int courseId);
-    public Task<Course?> GetCourseWithAuthorsByIdAsync(int courseId);
-    void UpdateCourse(Course course);
+    Task<Course?> GetCourseWithAuthorsByIdAsync(int courseId);
+    Task<IEnumerable<Course>> GetCoursesAsync();
+    Task<IEnumerable<Course>> GetCoursesAsync(string? category, string? searchQuery);
+    ///////////////////////////
+    // Delete
     void DeleteCourse(int courseId);
 
 ////////////////////////////////////////////////////////////////////////////
 // Author
-//////////////////////////////////////////////////////////////////////////// 
+////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////
+    // Create
     void AddAuthor(Author author);
-    Task<Author?> FindAuthorAsync(int id);
+    
+    ///////////////////////////
+    // Read
     Task<Author?> GetAuthorByIdAsync(int authorId);
     Task<List<Author>> GetAuthorsById(IEnumerable<int> authorIds);
     Task<Author?> GetAuthorWithCoursesByIdAsync(int authorId);
-    void UpdateAuthor(Author author);
+
+    ///////////////////////////
+    // Delete
     void DeleteAuthor(Author author);
 
 ////////////////////////////////////////////////////////////////////////////
